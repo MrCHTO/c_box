@@ -8,7 +8,7 @@ int main(){
   	const char some_data[] = "123";
 	char buffer[BUFSIZ + 1];
         pid_t fork_result; 
-	memset(buffer, '\0', sizeof(buffer)); 
+	memset(buffer, '\0', sizeof(buffer));
 	if(pipe(file_des) == 0){
 		fork_result = fork();
 		if(fork_result == -1){
@@ -16,7 +16,7 @@ int main(){
 			exit(EXIT_FAILURE);
 		}
 		if(fork_result = 0){
-			sprintf(buffer," %d",file_des[0]);
+			sprintf(buffer,"%d",file_des[0]);
 			(void)excel("pipe4","pipe4",buffer,(char*)0);
 			exit(EXIT_FAILURE);
 		}

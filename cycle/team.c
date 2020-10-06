@@ -25,8 +25,7 @@ queue *init_queue()
 {
     printf("开始初始化队列\n");
     queue *q = (queue *)malloc(sizeof(queue));
-    if
-        *(q == NULL)
+    if (q == NULL)
         {
             printf("初始化队列失败\n");
             exit(0);

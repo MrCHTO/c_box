@@ -12,40 +12,40 @@ typedef struct queue
 } queue;
 node *init_node()
 {
-    printf("å¼€å§‹åˆå§‹åŒ–èŠ‚ç‚¹...----------");
+    printf("¿ªÊ¼³õÊ¼»¯½Úµã...----------");
     node *n = (node *)malloc(sizeof(node));
     if (n == NULL)
     {
-        printf("åˆå§‹åŒ–èŠ‚ç‚¹å¤±è´¥\n");
+        printf("³õÊ¼»¯½ÚµãÊ§°Ü\n");
         exit(0);
     }
-    printf("åˆå§‹åŒ–èŠ‚ç‚¹å®Œæˆ\n");
+    printf("³õÊ¼»¯½ÚµãÍê³É\n");
     return n;
 }
 queue *init_queue()
 {
-    printf("å¼€å§‹åˆå§‹åŒ–é˜Ÿåˆ—...----------");
+    printf("¿ªÊ¼³õÊ¼»¯¶ÓÁĞ...----------");
     queue *q = (queue *)malloc(sizeof(queue));
     if (q == NULL)
     {
-        printf("åˆå§‹åŒ–é˜Ÿåˆ—å¤±è´¥\n");
+        printf("³õÊ¼»¯¶ÓÁĞÊ§°Ü\n");
         exit(0);
     }
     q->head = NULL;
     q->tail = NULL;
-    printf("åˆå§‹åŒ–é˜Ÿåˆ—å®Œæˆ\n");
+    printf("³õÊ¼»¯¶ÓÁĞÍê³É\n");
     return q;
 }
 int empty(queue *q)
 {
     if (q->head == NULL)
     {
-        printf("é˜Ÿåˆ—ä¸ºç©ºï¼\n");
+        printf("¶ÓÁĞÎª¿Õ£¡\n");
         return 1;
     }
     else
     {
-        printf("é˜Ÿåˆ—ä¸ä¸ºç©ºï¼\n");
+        printf("¶ÓÁĞ²»Îª¿Õ£¡\n");
         return 0;
     }
 }
@@ -53,7 +53,7 @@ void push(queue *q)
 {
     int data;
     node *n = init_node();
-    printf("è¯·è¾“å…¥è¯¥èŠ‚ç‚¹dataï¼š");
+    printf("ÇëÊäÈë¸Ã½Úµãdata£º");
     scanf("%d", &data);
     n->date = data;
     n->next = NULL;
@@ -61,22 +61,22 @@ void push(queue *q)
     {
         q->head = n;
         q->tail = n;
-        printf("å¤´èŠ‚ç‚¹åŠ å…¥æˆåŠŸï¼\n");
+        printf("Í·½Úµã¼ÓÈë³É¹¦£¡\n");
     }
     else
     {
         q->tail->next = n;
         q->tail = n;
-        printf("èŠ‚ç‚¹åŠ å…¥æˆåŠŸï¼\n");
+        printf("½Úµã¼ÓÈë³É¹¦£¡\n");
     }
 }
 void pop(queue *q)
 {
     node *n = q->head;
-    printf("è¯¥èŠ‚ç‚¹dataä¸ºï¼š%d \n", n->date);
+    printf("¸Ã½ÚµãdataÎª£º%d \n", n->date);
     if (empty(q))
     {
-        printf("é˜Ÿåˆ—ç©ºäº†ï¼\n");
+        printf("¶ÓÁĞ¿ÕÁË£¡\n");
         return;
     }
     if (q->head == q->tail)
@@ -84,13 +84,13 @@ void pop(queue *q)
         q->head = NULL;
         q->tail = NULL;
         free(n);
-        printf("èŠ‚ç‚¹é‡Šæ”¾ä¸”ä¸ºç©ºï¼\n");
+        printf("½ÚµãÊÍ·ÅÇÒÎª¿Õ£¡\n");
     }
     else
     {
         q->head = q->head->next;
         free(n);
-        printf("èŠ‚ç‚¹è¢«é‡Šæ”¾ï¼\n");
+        printf("½Úµã±»ÊÍ·Å£¡\n");
     }
 }
 int main()

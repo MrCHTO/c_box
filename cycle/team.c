@@ -7,7 +7,7 @@ typedef struct node
 } node;
 typedef struct queue
 {
-    node *head; 
+    node *head;
     node *tail;
 } queue;
 node *init_node()

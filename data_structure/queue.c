@@ -100,11 +100,13 @@ int main()
     for (int i = 0; i < 10; i++)
     {
         push(q);
+        printf("\n");
     }
     printf("\n");
     for (int i = 0; i < 10; i++)
     {
         pop(q);
+        printf("\n");
     }
     system("pause");
 }

@@ -56,6 +56,7 @@ void push(lb *l)
     }
     else
     {
+        
         l->head->next = n;
         l->head = n;
     }

@@ -7,26 +7,26 @@ typedef struct node
 } node;
 node *init_node()
 {
-    printf("¿ªÊ¼³õÊ¼»¯½Úµã...----------");
+    printf("Start initializing nodes... ----------");
     node *n = (node *)malloc(sizeof(node));
     if (n == NULL)
     {
-        printf("³õÊ¼»¯½ÚµãÊ§°Ü\n");
+        printf("Failed to initialize node\n");
         exit(0);
     }
-    printf("³õÊ¼»¯½ÚµãÍê³É\n");
+    printf("The initialization node is complete\n");
     return n;
 }
 int empty(node *phead)
 {
     if (phead == NULL)
     {
-        printf("Á´±íÎª¿Õ£¡\n");
+        printf("The list is emptyï¼\n");
         return 1;
     }
     else
     {
-        printf("Á´±í²»Îª¿Õ£¡\n");
+        printf("The list is not emptyï¼\n");
         return 0;
     }
 }
@@ -41,20 +41,20 @@ node *creat_LinkList(int n)
     for (int i = 0; i < n; i++)
     {
         node *n = init_node();
-        printf("ÇëÊäÈë¸Ã½Úµãdata£º");
+        printf("Please enter the node Dataï¼š");
         scanf("%d", &n->date);
         n->next = NULL;
         if (empty(phead))
         {
             phead = n;
             pend = n;
-            printf("Í·½Úµã¼ÓÈë³É¹¦£¡\n");
+            printf("Header node added successfullyï¼\n");
         }
         else
         {
             pend->next = n;
             pend = n;
-            printf("½Úµã¼ÓÈë³É¹¦£¡\n");
+            printf("node added successfullyï¼\n");
         }
         printf("\n");
     }

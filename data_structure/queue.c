@@ -12,40 +12,40 @@ typedef struct queue
 } queue;
 node *init_node()
 {
-    printf("¿ªÊ¼³õÊ¼»¯½Úµã...----------");
+    printf("Start initializing nodes... ----------");
     node *n = (node *)malloc(sizeof(node));
     if (n == NULL)
     {
-        printf("³õÊ¼»¯½ÚµãÊ§°Ü\n");
+        printf("Failed to initialize node\n");
         exit(0);
     }
-    printf("³õÊ¼»¯½ÚµãÍê³É\n");
+    printf("The initialization node is complete\n");
     return n;
 }
 queue *init_queue()
 {
-    printf("¿ªÊ¼³õÊ¼»¯¶ÓÁĞ...----------");
+    printf("Start initializing the queue... ----------");
     queue *q = (queue *)malloc(sizeof(queue));
     if (q == NULL)
     {
-        printf("³õÊ¼»¯¶ÓÁĞÊ§°Ü\n");
+        printf("Failed to initialize the queue\n");
         exit(0);
     }
     q->head = NULL;
     q->tail = NULL;
-    printf("³õÊ¼»¯¶ÓÁĞÍê³É\n");
+    printf("The initialization queue is complete\n");
     return q;
 }
 int empty(queue *q)
 {
     if (q->head == NULL)
     {
-        printf("¶ÓÁĞÎª¿Õ£¡\n");
+        printf("The queue is emptyï¼\n");
         return 1;
     }
     else
     {
-        printf("¶ÓÁĞ²»Îª¿Õ£¡\n");
+        printf("The queue is not emptyï¼\n");
         return 0;
     }
 }
@@ -53,7 +53,7 @@ void push(queue *q)
 {
     int data;
     node *n = init_node();
-    printf("ÇëÊäÈë¸Ã½Úµãdata£º");
+    printf("Please enter the node Dataï¼š");
     scanf("%d", &data);
     n->date = data;
     n->next = NULL;
@@ -61,22 +61,22 @@ void push(queue *q)
     {
         q->head = n;
         q->tail = n;
-        printf("Í·½Úµã¼ÓÈë³É¹¦£¡\n");
+        printf("Header node added successfullyï¼\n");
     }
     else
     {
         q->tail->next = n;
         q->tail = n;
-        printf("½Úµã¼ÓÈë³É¹¦£¡\n");
+        printf("node added successfullyï¼\n");
     }
 }
 void pop(queue *q)
 {
     node *n = q->head;
-    printf("¸Ã½ÚµãdataÎª£º%d \n", n->date);
+    printf("The node data isï¼š%d \n", n->date);
     if (empty(q))
     {
-        printf("¶ÓÁĞ¿ÕÁË£¡\n");
+        printf("The queue is NULLï¼\n");
         return;
     }
     if (q->head == q->tail)
@@ -84,13 +84,13 @@ void pop(queue *q)
         q->head = NULL;
         q->tail = NULL;
         free(n);
-        printf("½ÚµãÊÍ·ÅÇÒÎª¿Õ£¡\n");
+        printf("The node is released and emptyï¼\n");
     }
     else
     {
         q->head = q->head->next;
         free(n);
-        printf("½Úµã±»ÊÍ·Å£¡\n");
+        printf("Nodes are releasedï¼\n");
     }
 }
 int main()

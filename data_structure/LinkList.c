@@ -72,5 +72,6 @@ int main()
         printf("%d ", pmov->date);
         pmov = pmov->next;
     }
+    printf("\n");
     system("pause");
 }

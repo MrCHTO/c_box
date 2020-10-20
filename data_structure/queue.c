@@ -53,7 +53,7 @@ void push(queue *q)
 {
     int data;
     node *n = init_node();
-    printf("Please enter the node DataÔº?");
+    printf("Please enter the node Data:");
     scanf("%d", &data);
     n->date = data;
     n->next = NULL;
@@ -73,7 +73,7 @@ void push(queue *q)
 void pop(queue *q)
 {
     node *n = q->head;
-    printf("The node data isÔº?%d \n", n->date);
+    printf("The node data is: \n", n->date);
     if (empty(q))
     {
         printf("The queue is NULLÔºÅ\n");

@@ -74,7 +74,7 @@ void push(inn *q)
 void pop(inn *q)
 {
     node *n = q->head;
-    printf("The node data is: \n", n->date);
+    printf("The node data is: %d\n", n->date);
     if (empty(q))
     {
         printf("The queue is NULL！\n");

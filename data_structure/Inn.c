@@ -54,6 +54,7 @@ void push(inn *q)
 {
     int data;
     node *n = init_node();
+    q->length++;
     printf("Please enter the node Data:");
     scanf("%d", &data);
     n->date = data;
@@ -93,6 +94,7 @@ void pop(inn *q)
         free(n);
         printf("Nodes are released！\n");
     }
+    q->length--;
 }
 int main()
 {
@@ -101,12 +103,13 @@ int main()
     scanf("%d", &nn);
     inn *q;
     q = init_inn();
+    printf("\n");
     for (int i = 0; i < nn; i++)
     {
         push(q);
         printf("\n");
     }
-    printf("--\n");
+    printf("you have %d node in this inn! \n",q->length);
     for (int i = 0; i < nn; i++)
     {
         pop(q);

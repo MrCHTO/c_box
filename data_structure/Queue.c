@@ -27,6 +27,7 @@ queue *init_queue()
 {
     printf("Start initializing the queue... ----------");
     queue *q = (queue *)malloc(sizeof(queue));
+    q->length = 0;
     if (q == NULL)
     {
         printf("Failed to initialize the queue\n");
@@ -58,6 +59,7 @@ void push(queue *q)
     scanf("%d", &data);
     n->date = data;
     n->next = NULL;
+    q->length++;
     if (empty(q))
     {
         q->head = n;
@@ -93,6 +95,7 @@ void pop(queue *q)
         free(n);
         printf("Nodes are released！\n");
     }
+    q->length--;
 }
 int main()
 {
@@ -101,12 +104,13 @@ int main()
     scanf("%d", &nn);
     queue *q;
     q = init_queue();
+    printf("\n");
     for (int i = 0; i < nn; i++)
     {
         push(q);
         printf("\n");
     }
-    printf("\n");
+    printf("you have %d node in this queue! \n", q->length );
     for (int i = 0; i < nn; i++)
     {
         pop(q);

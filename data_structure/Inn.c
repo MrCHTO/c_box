@@ -106,7 +106,7 @@ int main()
         push(q);
         printf("\n");
     }
-    printf("\n");
+    printf("--\n");
     for (int i = 0; i < nn; i++)
     {
         pop(q);

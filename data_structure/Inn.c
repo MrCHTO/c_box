@@ -5,12 +5,12 @@ typedef struct node
     int date;
     struct node *next;
 } node;
-typedef struct queue
+typedef struct inn
 {
     node *head;
     node *tail;
     int length;
-} queue;
+} inn;
 node *init_node()
 {
     printf("Start initializing nodes... ----------");
@@ -23,34 +23,34 @@ node *init_node()
     printf("The initialization node is complete\n");
     return n;
 }
-queue *init_queue()
+inn *init_inn()
 {
-    printf("Start initializing the queue... ----------");
-    queue *q = (queue *)malloc(sizeof(queue));
+    printf("Start initializing the inn... ----------");
+    inn *q = (inn *)malloc(sizeof(inn));
     if (q == NULL)
     {
-        printf("Failed to initialize the queue\n");
+        printf("Failed to initialize the inn\n");
         exit(0);
     }
     q->head = NULL;
     q->tail = NULL;
-    printf("The initialization queue is complete\n");
+    printf("The initialization inn is complete\n");
     return q;
 }
-int empty(queue *q)
+int empty(inn *q)
 {
     if (q->head == NULL)
     {
-        printf("The queue is empty！\n");
+        printf("The inn is empty！\n");
         return 1;
     }
     else
     {
-        printf("The queue is not empty！\n");
+        printf("The inn is not empty！\n");
         return 0;
     }
 }
-void push(queue *q)
+void push(inn *q)
 {
     int data;
     node *n = init_node();
@@ -66,13 +66,12 @@ void push(queue *q)
     }
     else
     {
-        q->tail->next = n;
-        q->tail = n;
+        n->next = q->head;
+        q->head = n;
         printf("node added successfully ！\n");
-
     }
 }
-void pop(queue *q)
+void pop(inn *q)
 {
     node *n = q->head;
     printf("The node data is: \n", n->date);
@@ -100,8 +99,8 @@ int main()
     int nn;
     printf("please input number:");
     scanf("%d", &nn);
-    queue *q;
-    q = init_queue();
+    inn *q;
+    q = init_inn();
     for (int i = 0; i < nn; i++)
     {
         push(q);

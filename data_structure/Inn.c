@@ -109,7 +109,7 @@ int main()
         push(q);
         printf("\n");
     }
-    printf("you have %d node in this inn! \n",q->length);
+    printf("you have %d node in this inn! \n", q->length);
     for (int i = 0; i < nn; i++)
     {
         pop(q);

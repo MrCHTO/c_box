@@ -69,7 +69,6 @@ void push(queue *q)
         q->tail->next = n;
         q->tail = n;
         printf("node added successfully ！\n");
-
     }
 }
 void pop(queue *q)

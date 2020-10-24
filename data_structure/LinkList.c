@@ -26,7 +26,7 @@ int empty(node *phead)
     }
     else
     {
-        printf("The list is not empty！\n");
+        printf("The list is not empty ！\n");
         return 0;
     }
 }

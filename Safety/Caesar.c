@@ -4,12 +4,14 @@ int number = 0;
 int dnumber = 0;
 char password[100];
 char dpassword[100];
-void input(int k)
+void input()
 {
-    int i;
+    int i, k;
     printf("please input the password:\n");
     gets(password);
     number = strlen(password);
+    printf("please input the key:\n");
+    scanf("%d", &k);
     for (i = 0; i < number; i++)
     {
         if (password[i] == 32)
@@ -44,15 +46,19 @@ void input(int k)
             password[i] = 32;
         }
     }
+    printf("the dpassword is:\n");
     puts(password);
+    getchar();
 }
 
-void output(int k)
+void output()
 {
-    int i;
+    int i, k;
     printf("please input the dpassword:\n");
     gets(dpassword);
     dnumber = strlen(dpassword);
+    printf("please input the key:\n");
+    scanf("%d", &k);
     for (i = 0; i < number; i++)
     {
         if (dpassword[i] == 32)
@@ -91,13 +97,15 @@ void output(int k)
             dpassword[i] = 32;
         }
     }
+    printf("the dpassword is:\n");
     puts(dpassword);
+    getchar();
 }
 
 int main()
 {
-    input(2);
+    input();
     printf("\n");
-    output(2);
-    getchar();
+    output();
+    system("pause");
 }

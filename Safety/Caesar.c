@@ -63,6 +63,10 @@ void output(int k)
         {
             dpassword[i] = dpassword[i] - 65;
             dpassword[i] = dpassword[i] - k;
+            if (dpassword[i] < 0)
+            {
+                dpassword[i] = dpassword[i] + 52;
+            }
             dpassword[i] = dpassword[i] % 52;
         }
         if (dpassword[i] > 96 && dpassword[i] < 123)

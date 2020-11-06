@@ -73,13 +73,11 @@ void output()
             {
                 dpassword[i] = dpassword[i] + 52;
             }
-            dpassword[i] = dpassword[i] % 52;
         }
         if (dpassword[i] > 96 && dpassword[i] < 123)
         {
             dpassword[i] = dpassword[i] - 71;
             dpassword[i] = dpassword[i] - k;
-            dpassword[i] = dpassword[i] % 52;
         }
     }
     for (i = 0; i < number; i++)

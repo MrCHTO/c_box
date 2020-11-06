@@ -69,7 +69,7 @@ void output()
             dpassword[i] = dpassword[i] - nkey[j % knumber];
             if (dpassword[i] < 0)
             {
-                dpassword[i] = dpassword[i] + 25;
+                dpassword[i] = dpassword[i] + 26;
             }
             j++;
         }

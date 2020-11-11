@@ -34,7 +34,9 @@ void quick(int left, int right)
 int main()
 {
     int i;
+    printf("please input the len:\n");
     scanf("%d", &len);
+    printf("please input the number:\n");
     for (i = 0; i < len; i++)
     {
         scanf("%d", &number[i]);

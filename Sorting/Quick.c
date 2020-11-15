@@ -1,51 +1,58 @@
 #include <stdio.h>
-int number[100];
-int len = 0;
-void quick(int left, int right)
+#include <stdlib.h>
+int test[100];
+int num = 0, len = 0;
+void Quick_Core(int arr[], int start, int end)
 {
-    int pleft, pright;
-    int temp, mid;
-    if (left > right)
+    int left, right, temp, mid;
+    if (start > end)
     {
         return;
     }
-    mid = number[left];
-    pleft = left;
-    pright = right;
-    while (pleft != pright)
+    mid = arr[start];
+    left = start;
+    right = end;
+    while (left != right)
     {
-        while (number[pright] >= mid && pleft < pright)
+        while (arr[right] >= mid && left < right)
         {
-            pright--;
+            right--;
         }
-        while (number[pleft] <= mid && pleft < pright)
+        while (arr[left] <= mid && left < right)
         {
-            pleft++;
+            left++;
         }
-        temp = number[pleft];
-        number[pleft] = number[pright];
-        number[pright] = temp;
+        if (arr[left] >= arr[right])
+        {
+            temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+        }
     }
-    number[left] = number[pleft];
-    number[pleft] = mid;
-    quick(left, pleft - 1);
-    quick(pleft + 1, right);
+    // left==right
+    arr[start] = arr[left];
+    arr[left] = mid;
+    Quick_Core(arr, start, left - 1);
+    Quick_Core(arr, left + 1, end);
+}
+void Quick_Sort(int arr[], int length)
+{
+    Quick_Core(arr, 0, length - 1);
 }
 int main()
 {
-    int i;
-    printf("please input the len:\n");
-    scanf("%d", &len);
-    printf("please input the number:\n");
-    for (i = 0; i < len; i++)
+    printf("please input number:\n");
+    scanf("%d", &num);
+    for (int i = 0; i < num; i++)
     {
-        scanf("%d", &number[i]);
+        printf("please input the %d:\n", i + 1);
+        scanf("%d", &test[i]);
     }
-    quick(0, len - 1);
-    for (i = 0; i < len; i++)
+    Quick_Sort(test, num);
+    for (int i = 0; i < num; i++)
     {
-        printf("%d ", number[i]);
+        printf("%d ", test[i]);
     }
-    getchar();
+    printf("\n");
     system("pause");
 }

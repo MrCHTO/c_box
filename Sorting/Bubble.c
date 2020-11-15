@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-void Bubble(int arr[], int length)
+int test[100];
+int num = 0, len = 0;
+void Bubble_Sort(int arr[], int length)
 {
 	int temp;
 	for (int i = 0; i < length; i++)
@@ -18,8 +20,6 @@ void Bubble(int arr[], int length)
 }
 int main()
 {
-	int num = 0, len = 0, temp;
-	int test[100];
 	printf("please input number:\n");
 	scanf("%d", &num);
 	for (int i = 0; i < num; i++)
@@ -27,11 +27,11 @@ int main()
 		printf("please input the %d:\n", i + 1);
 		scanf("%d", &test[i]);
 	}
-	Bubble(test, num);
+	Bubble_Sort(test, num);
 	for (int i = 0; i < num; i++)
 	{
 		printf("%d ", test[i]);
 	}
-	printf("\n ");
+	printf("\n");
 	system("pause");
 }

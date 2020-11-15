@@ -1,31 +1,35 @@
 #include <stdio.h>
-int number[100];
-int len;
-int main()
+#include <stdlib.h>
+int test[100];
+int num = 0, len = 0;
+void Insert_Sort(int arr[], int length)
 {
-    int i, temp, j;
-    printf("please input the len:\n");
-    scanf("%d", &len);
-    printf("please input the number:\n");
-    for (i = 0; i < len; i++)
+    for (int i = 1; i < length; i++)
     {
-        scanf("%d", &number[i]);
-    }
-    for (i = 1; i < len; i++)
-    {
-        temp = number[i];
-        j = i - 1;
-        while (j >= 0 && number[j] > temp)
+        int temp = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > temp)
         {
-            number[j + 1] = number[j];
+            arr[j + 1] = arr[j];
             j--;
         }
-        number[j + 1] = temp;
+        arr[j + 1] = temp;
     }
-    for (i = 0; i < len; i++)
+}
+int main()
+{
+    printf("please input number:\n");
+    scanf("%d", &num);
+    for (int i = 0; i < num; i++)
     {
-        printf("%d ", number[i]);
+        printf("please input the %d:\n", i + 1);
+        scanf("%d", &test[i]);
     }
-    getchar();
+    Insert_Sort(test, num);
+    for (int i = 0; i < num; i++)
+    {
+        printf("%d ", test[i]);
+    }
+    printf("\n");
     system("pause");
 }

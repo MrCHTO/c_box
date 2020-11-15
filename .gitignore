@@ -4,14 +4,14 @@
 ###### 重  要 ######
 !.gitignore
 !/.git
-!/Test
+!Test.c
 !README.md
 
 #### 不忽略以下 ####
-!/Data_Structure
+!/Structure
 !/HDU_OJ
 !/Linux
-!/Sort
+!/Sorting
 !/Big_Data
 !/Safety
 

@@ -180,10 +180,10 @@ int main()
     }
     printf("\n");
     memcpy(Random_Arr, Random_Backup, sizeof(int) * length);
-    printf("Bubble_Sort time is %f \n", ((double)E_BS - S_BS) / CLK_TCK);
-    printf("Bubble_New_Sort time is %f \n", ((double)E_NBS - S_NBS) / CLK_TCK);
-    printf("Insert_Sort time is %f \n", ((double)E_IS - S_IS) / CLK_TCK);
-    printf("Quick_Sort time is %f \n", ((double)E_QS - S_QS) / CLK_TCK);
-    printf("Select_Sort time is %f \n", ((double)E_SS - S_SS) / CLK_TCK);
+    printf("Bubble_Sort time is %f s\n", ((double)E_BS - S_BS) / CLK_TCK);
+    printf("Bubble_New_Sort time is %f s\n", ((double)E_NBS - S_NBS) / CLK_TCK);
+    printf("Insert_Sort time is %f s\n", ((double)E_IS - S_IS) / CLK_TCK);
+    printf("Quick_Sort time is %f s\n", ((double)E_QS - S_QS) / CLK_TCK);
+    printf("Select_Sort time is %f s\n", ((double)E_SS - S_SS) / CLK_TCK);
     system("pause");
 }

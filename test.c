@@ -1,6 +1,4 @@
-#include <stdio.h>
-int main()
-{
-    printf("hello word!\n");
-    system("pause");
+#include<stdio.h>
+int main(){
+    printf("asddwedewd");
 }

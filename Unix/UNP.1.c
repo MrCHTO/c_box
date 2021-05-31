@@ -26,19 +26,27 @@ int main(int argc, char *argv[])
 			}
 			else if (cpid == 0) //Creat Child
 			{
+				char *execv_str[] = {"echo", "executed by execv", NULL};
+				if (execv("/usr/bin/echo", execv_str) < 0)
+				{
+					perror("error on exec");
+					printf("Child done\n");
+					exit(0);
+				}
+				/*
 				memset(temp, '\0', sizeof(temp));
-				strcpy(*temp[0], *argv[2]);
 				if (execvp("cat", temp) < 0)
 				{
 					perror("Error");
 					printf("Child done\n");
 					exit(0);
 				}
+				*/
 			}
 			else //Creat Father
 			{
 				wait(&cpid);
-				printf("father done\n");
+				printf("Father done\n");
 			}
 		}
 		else

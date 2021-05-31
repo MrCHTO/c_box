@@ -5,30 +5,36 @@
 int main(int argc, char *argv[])
 {
 	pid_t cpid;
-	char *temp[2];
+	char *temp[1];
 	if (argc == 3)
 	{
-		cpid = fork();
-		if (cpid == -1) //Creat Error
+		if (argv[1] == "cat")
 		{
-			exit(0);
-		}
-		else if (cpid == 0) //Creat Child
-		{
-			memset(temp, '\0', sizeof(temp));
-			temp[0] = argv[1];
-			temp[1] = argv[2];
-			if (execv("/usr/bin/cat", argv) < 0)
+			cpid = fork();
+			if (cpid == -1) //Creat Error
 			{
-				perror("Error");
+				exit(0);
 			}
-			printf("Child done");
-			exit(0);
+			else if (cpid == 0) //Creat Child
+			{
+				memset(temp, '\0', sizeof(temp));
+				temp[0] = argv[2];
+				if (execvp("cat", argv) < 0)
+				{
+					perror("Error");
+					printf("Child done\n");
+					exit(0);
+				}
+			}
+			else //Creat Father
+			{
+				wait(&cpid);
+				printf("father done\n");
+			}
 		}
-		else //Creat Father
+		else
 		{
-			wait(&cpid);
-			printf("father done");
+			exit(0);
 		}
 	}
 	else

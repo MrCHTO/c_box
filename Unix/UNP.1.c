@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 		}
 		else if (cpid == 0) //Creat Child
 		{
-			memset(temp, 'NULL', sizeof(temp));
+			memset(temp, '\0', sizeof(temp));
 			temp[0] = argv[1];
 			temp[1] = argv[2];
 			if (execv("/usr/bin/cat", argv) < 0)

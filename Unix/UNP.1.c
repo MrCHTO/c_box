@@ -6,9 +6,18 @@ int main(int argc, char *argv[])
 {
 	pid_t cpid;
 	char *temp[1];
+	int flag = 0;
 	if (argc == 3)
 	{
-		if (argv[1] == "cat")
+		if (strcmp(argv[1], "cat") == 0)
+		{
+			flag = 0
+		}
+		else
+		{
+			flag = 1;
+		}
+		if (flag == 0)
 		{
 			cpid = fork();
 			if (cpid == -1) //Creat Error

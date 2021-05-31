@@ -5,9 +5,9 @@
 int main(int argc, char *argv[])
 {
 	pid_t cpid;
+	char temp[2];
 	if (argc == 3)
 	{
-
 		cpid = fork();
 		if (cpid == -1) //Creat Error
 		{
@@ -15,21 +15,15 @@ int main(int argc, char *argv[])
 		}
 		else if (cpid == 0) //Creat Child
 		{
-			char *execv_str[] = {"echo", "executed by execv", NULL};
-			if (execv("/usr/bin/echo", execv_str) < 0)
+			memset(temp, 'NULL', sizeof(temp));
+			temp[0] = argv[1];
+			temp[1] = argv[2];
+			if (execv("/usr/bin/cat", argv) < 0)
 			{
-				perror("error on exec");
-				exit(0);
+				perror("Error");
 			}
-
-			/*
-				if (execv("/usr/bin/cat", argv) < 0)
-				{
-					perror("Error");
-				}
-				printf("Child done");
-				exit(0);
-				*/
+			printf("Child done");
+			exit(0);
 		}
 		else //Creat Father
 		{

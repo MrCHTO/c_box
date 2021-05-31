@@ -26,10 +26,11 @@ int main(int argc, char *argv[])
 			}
 			else if (cpid == 0) //Creat Child
 			{
-				*temp[0] = *argv[1];
-				*temp[1] = *argv[2];
+				*temp[0] = &argv[1];
+				*temp[1] = &argv[2];
 				*temp[2] = 0;
 				execv("usr/bin/cat", temp);
+				printf("Chlid done\n");
 			}
 			else //Creat Father
 			{

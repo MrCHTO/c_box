@@ -4,7 +4,7 @@
 #include <string.h>
 int main(int argc, char *argv[])
 {
-	printf("%s -- &s -- %s", argv[0], argv[1], argv[2]);
+	printf("%s -- %s -- %s", argv[0], argv[1], argv[2]);
 	pid_t cpid;
 	char *temp[1];
 	int flag = 0;

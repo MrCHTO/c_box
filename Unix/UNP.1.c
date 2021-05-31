@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
 	pid_t cpid;
-	char *temp[1];
+	char *temp[2];
 	int flag = 0;
 	if (argc == 3)
 	{
@@ -26,26 +26,9 @@ int main(int argc, char *argv[])
 			}
 			else if (cpid == 0) //Creat Child
 			{
-
-				execvp("cat", argv);
-
-				/*
-				char *execv_str[] = {"echo", "executed by execv", NULL};
-				if (execv("/usr/bin/echo", execv_str) < 0)
-				{
-					perror("error on exec");
-					printf("Child done\n");
-					exit(0);
-				}
-				
-				memset(temp, '\0', sizeof(temp));
-				if (execvp("cat", temp) < 0)
-				{
-					perror("Error");
-					printf("Child done\n");
-					exit(0);
-				}
-				*/
+				*temp[0] = *argv[1];
+				*temp[1] = *argv[2];
+				execvp("cat", temp);
 			}
 			else //Creat Father
 			{

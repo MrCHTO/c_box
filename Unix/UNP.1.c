@@ -4,9 +4,12 @@
 #include <string.h>
 int main(int argc, char *argv[])
 {
+	char buffer[BUFSIZ + 1];
+	char file_des[2];
 	pid_t cpid;
-	char *temp[2];
+	char somed_ata[2];
 	int flag = 0;
+	memset(buffer, '\0', sizeof(buffer));
 	if (argc == 3)
 	{
 		if (strcmp(argv[1], "cat") == 0)
@@ -26,20 +29,12 @@ int main(int argc, char *argv[])
 			}
 			else if (cpid == 0) //Creat Child
 			{
-				char *execvp_str[] = {"cat", "text.txt", NULL};
-				execvp("cat", execvp_str);
-				/*
-				temp[0] = argv[1];
-				temp[1] = argv[2];
-				temp[2] = 0;
-				execv("usr/bin/cat", temp);
-				printf("Chlid done\n");
-				*/
+				write(file_des[1], argv, strlen(argv));
 			}
 			else //Creat Father
 			{
-				wait(&cpid);
-				printf("Father done\n");
+				sprintf(buffer, "%s", file_des[0]);
+				execvp("cat",buffer);
 			}
 		}
 		else

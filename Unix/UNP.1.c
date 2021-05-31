@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 			{
 				memset(temp, '\0', sizeof(temp));
 				temp[0] = argv[2];
-				if (execvp("cat", argv) < 0)
+				if (execvp("cat", temp) < 0)
 				{
 					perror("Error");
 					printf("Child done\n");

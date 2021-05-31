@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 			else if (cpid == 0) //Creat Child
 			{
 				char *execvp_str[] = {"echo", "executed by execvp", ">>", "~/abc.txt", NULL};
-				execvp("echo", execvp_str)
+				execvp("echo", execvp_str);
 				/*
 				temp[0] = argv[1];
 				temp[1] = argv[2];

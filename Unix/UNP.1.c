@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	{
 		if (strcmp(argv[1], "cat") == 0)
 		{
-			flag = 0
+			flag = 0;
 		}
 		else
 		{

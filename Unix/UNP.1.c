@@ -26,9 +26,9 @@ int main(int argc, char *argv[])
 			}
 			else if (cpid == 0) //Creat Child
 			{
-				memset(temp, '\0', sizeof(temp));
-				*temp[0] = *argv[2];
-				if (execvp("cat", temp) < 0)
+				//memset(temp, '\0', sizeof(temp));
+				//*temp[0] = *argv[2];
+				if (execvp("cat", argv[2]) < 0)
 				{
 					perror("Error");
 					printf("Child done\n");

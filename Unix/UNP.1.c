@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
 	pid_t cpid;
-	char temp[2];
+	char *temp[2];
 	if (argc == 3)
 	{
 		cpid = fork();

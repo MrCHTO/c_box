@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
 			{
 				*temp[0] = *argv[1];
 				*temp[1] = *argv[2];
+				*temp[2] == NULL;
 				execv("usr/bin/cat", temp);
 			}
 			else //Creat Father

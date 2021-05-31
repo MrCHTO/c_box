@@ -16,12 +16,21 @@ int main(int argc, char *argv[])
 			}
 			else if (cpid == 0) //Creat Child
 			{
+				char *execv_str[] = {"echo", "executed by execv", NULL};
+				if (execv("/usr/bin/echo", execv_str) < 0)
+				{
+					perror("error on exec");
+					exit(0);
+				}
+
+				/*
 				if (execv("/usr/bin/cat", argv) < 0)
 				{
 					perror("Error");
 				}
 				printf("Child done");
 				exit(0);
+				*/
 			}
 			else //Creat Father
 			{

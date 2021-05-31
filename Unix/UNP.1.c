@@ -27,6 +27,10 @@ int main(int argc, char *argv[])
 			}
 			else if (cpid == 0) //Creat Child
 			{
+
+				execvp("argv[1]", argv);
+
+				/*
 				char *execv_str[] = {"echo", "executed by execv", NULL};
 				if (execv("/usr/bin/echo", execv_str) < 0)
 				{
@@ -34,7 +38,7 @@ int main(int argc, char *argv[])
 					printf("Child done\n");
 					exit(0);
 				}
-				/*
+				
 				memset(temp, '\0', sizeof(temp));
 				if (execvp("cat", temp) < 0)
 				{

@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 			else //Creat Father
 			{
 				sprintf(buffer, "%s", file_des[0]);
-				execvp("cat",buffer);
+				execvp("cat", buffer);
 			}
 		}
 		else

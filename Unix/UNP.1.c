@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
 	pid_t cpid;
-	char *temp[1];
+	char *temp;
 	int flag = 0;
 	if (argc == 3)
 	{
@@ -26,9 +26,10 @@ int main(int argc, char *argv[])
 			}
 			else if (cpid == 0) //Creat Child
 			{
+				*temp = argv[2];
 				//memset(temp, '\0', sizeof(temp));
 				//*temp[0] = *argv[2];
-				if (execvp("cat", argv[2]) < 0)
+				if (execvp("cat", temp) < 0)
 				{
 					perror("Error");
 					printf("Child done\n");

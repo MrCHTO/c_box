@@ -1,11 +1,11 @@
 #+TITLE: Experiment Guide for UNIX Network Programming
 #+DATE: <2021-03-23 Tue>
-#+AUTHOR: <Your name> and <Your ID>
+#+AUTHOR: 网182陈涛 and 189074308
 
 * Remark
 
 1. You should submit the HTML file of this file, using C-c C-e h h.
-2. the HTML file name should be of the form: UNP2020-189074123.html
+2. the HTML file name should be of the form: UNP2020-189074308.html
 
 * Exp. 1st: A one-time shell "system"
 

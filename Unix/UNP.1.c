@@ -4,7 +4,6 @@
 #include <string.h>
 int main(int argc, char *argv[])
 {
-	printf("%s -- %s -- %s", argv[0], argv[1], argv[2]);
 	pid_t cpid;
 	char *temp[1];
 	int flag = 0;
@@ -28,7 +27,7 @@ int main(int argc, char *argv[])
 			else if (cpid == 0) //Creat Child
 			{
 
-				execvp("argv[1]", argv);
+				execvp("cat", argv);
 
 				/*
 				char *execv_str[] = {"echo", "executed by execv", NULL};

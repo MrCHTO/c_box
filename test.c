@@ -1,55 +1,28 @@
 #include <stdio.h>
 int main()
 {
-    int a[10], i, j, temp, flag = 0, k;
-    float b, w = 0;
-    for (i = 0; i < 10; i++)
+    int a;
+    scanf("%d", &a);
+    if (a % 2 == 0)
     {
-        scanf("%d", &a[i]);
+        printf("NO");
     }
-    for (i = 0; i < 10; i++)
+    else if (a % 3 == 0)
     {
-        w = w + a[i];
+        printf("NO");
     }
-    printf("%.3f\n", w);
-    b = w / 10;
-    printf("%.2f\n", b);
-
-    for (i = 0; i < 10; i++)
+    else if (a % 5 == 0)
     {
-        for (j = 0; j < 10 - 1 - i; j++)
-        {
-            if (a[j] > a[j + 1])
-            {
-                temp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = temp;
-            }
-        }
+        printf("NO");
+    }
+    else if (a % 7 == 0)
+    {
+        printf("NO");
+    }
+    else
+    {
+        printf("YES");
     }
 
-    for (i = 0; i < 10; i++)
-    {
-        k = 0;
-        for (j = 0; j < 10; j++)
-        {
-            if (a[i] == a[j])
-            {
-                k++;
-            }
-        }
-        if (k > flag)
-        {
-            flag = k;
-            temp = a[i];
-        }
-    }
-
-    printf("%d\n", temp);
-
-    for (i = 0; i < 10; i++)
-    {
-        printf("%d ", a[i]);
-    }
     system("pause");
 }

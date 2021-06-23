@@ -1,18 +1,22 @@
 #include <stdio.h>
 #include <math.h>
-int main()
+#define float double
+void main()
 {
-    char a[10];
-    scanf("%s", a);
-    /*
-    gets(a);
-    
-    for (int i = 0; i < 10; i++)
+    /*考生在此设计程序*/
+    float a = 0, b = 0, s = 0, i, n;
+    for (n = 0; n <= 9; n++)
     {
-        printf("%c  ->  ", a[i]);
+        if (i = 2 * n)
+        {
+            a = pow(3, i) / (2 * i + 1);
+        }
+        if (i = 2 * n + 1)
+        {
+            b = pow(3, i) / (2 * i + 1);
+        }
     }
-    */
-    printf("\n");
-    puts(a);
+    s = s + a - b;
+    printf("%.5f", s);
     system("pause");
 }

@@ -39,13 +39,13 @@ int main()
     }
 
     /*  We can now read/write via sockfd.  */
-    printf("enter some message: ");
+    printf("send your message: ");
     fflush(stdout);
     fgets(string, sizeof(string), stdin);
 
     write(sockfd, string, sizeof(string));
     read(sockfd, rcv, sizeof(rcv));
-    printf("from server = %s\n", rcv);
+    printf("server send = %s\n", rcv);
     close(sockfd);
     exit(0);
 }

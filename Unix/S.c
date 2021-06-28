@@ -14,7 +14,7 @@ int main()
     struct sockaddr_in server_address;
     struct sockaddr_in client_address;
     char string[256];
-    char *ans = "yes!";
+    char *ans = "OK!";
 
     /*  Create an unnamed socket for the server.  */
 
@@ -35,7 +35,7 @@ int main()
     {
         char ch;
 
-        printf("server waiting\n");
+        printf("server waiting...\n");
 
         /*  Accept a connection.  */
 
@@ -43,8 +43,8 @@ int main()
         client_sockfd = accept(server_sockfd,
                                (struct sockaddr *)&client_address, &client_len);
 
-        printf("Now,client request come in.\n");
-        printf("client_address = %s\tclient_port = %u\n", inet_ntoa(client_address.sin_addr), htons(client_address.sin_port));
+        printf("client join\n");
+        printf("client_add = %s\tclient_port = %u\n", inet_ntoa(client_address.sin_addr), htons(client_address.sin_port));
 
         /*  We can now read/write to client on client_sockfd.  */
 

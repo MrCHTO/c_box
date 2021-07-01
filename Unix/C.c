@@ -1,5 +1,3 @@
-/*  Make the necessary includes and set up the variables.  */
-
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <stdio.h>
@@ -10,27 +8,20 @@
 
 int main()
 {
-    int sockfd;
-    int len;
-    struct sockaddr_in address;
+    int sfd, l;
+    struct sockaddr_in add;
     int result;
-    char string[256];
-    char rcv[256];
+    char ss[256];
+    char rs[256];
 
-    /*  Create a socket for the client.  */
+    sfd = socket(AF_INET, SOCK_STREAM, 0);
 
-    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    add.sin_family = AF_INET;
+    add.sin_addr.s_addr = inet_addr("127.0.0.1");
+    add.sin_port = htons(9734);
+    l = sizeof(add);
 
-    /*  Name the socket, as agreed with the server.  */
-
-    address.sin_family = AF_INET;
-    address.sin_addr.s_addr = inet_addr("127.0.0.1");
-    address.sin_port = htons(9734);
-    len = sizeof(address);
-
-    /*  Now connect our socket to the server's socket.  */
-
-    result = connect(sockfd, (struct sockaddr *)&address, len);
+    result = connect(sfd, (struct sockaddr *)&add, l);
 
     if (result == -1)
     {
@@ -38,14 +29,13 @@ int main()
         exit(1);
     }
 
-    /*  We can now read/write via sockfd.  */
     printf("send your message: ");
     fflush(stdout);
-    fgets(string, sizeof(string), stdin);
+    fgets(ss, sizeof(ss), stdin);
 
-    write(sockfd, string, sizeof(string));
-    read(sockfd, rcv, sizeof(rcv));
-    printf("server send = %s\n", rcv);
-    close(sockfd);
+    write(sfd, ss, sizeof(ss));
+    read(sfd, rs, sizeof(rs));
+    printf("server send = %s\n", rs);
+    close(sfd);
     exit(0);
 }

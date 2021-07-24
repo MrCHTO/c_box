@@ -115,5 +115,5 @@ int main()
         pop(q);
         printf("\n");
     }
-    system("pause");
+    //system("pause");
 }

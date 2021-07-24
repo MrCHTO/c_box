@@ -185,5 +185,5 @@ int main()
     printf("Insert_Sort time is %f s\n", ((double)E_IS - S_IS) / CLK_TCK);
     printf("Quick_Sort time is %f s\n", ((double)E_QS - S_QS) / CLK_TCK);
     printf("Select_Sort time is %f s\n", ((double)E_SS - S_SS) / CLK_TCK);
-    system("pause");
+    //system("pause");
 }

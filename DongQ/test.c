@@ -1,8 +1,14 @@
-#include<stdio.h>
-int main(){
-    int a;
-    float b;
-    char c;
-    scanf("%d%f %c",&a,&b,&c);
-    printf("%d\n%f\n%c\n",a,b,c);
+#include <stdio.h>
+int c(int A, int B)
+{
+    int c;
+    c = A + B;
+    return c;
+}
+int main()
+{
+    int A;
+    int B;
+    scanf("%d%d", &A, &B);
+    printf("%d%d", c(A, B));
 }

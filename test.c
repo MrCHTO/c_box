@@ -1,8 +1,11 @@
 #include <stdio.h>
+int c(int a, int b)
+{
+	return a + b;
+}
 int main()
 {
-	int a;
-	scanf("%d", &a);
-	printf("Hello Word! 测试\n");
-	printf("%d\n", a);
+	int x, y;
+	scanf("%d%d", &x, &y);
+	printf("%d", c(x, y));
 }

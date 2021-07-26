@@ -1,14 +1,11 @@
-#include <stdio.h>
-int c(int A, int B)
+#include<stdio.h>
+int c(int a,int b)
 {
-    int c;
-    c = A + B;
-    return c;
+return a+b;
 }
 int main()
 {
-    int A;
-    int B;
-    scanf("%d%d", &A, &B);
-    printf("%d%d", c(A, B));
+int x,y;
+scanf("%d%d",&x,&y);
+printf("%d",c(x,y));
 }

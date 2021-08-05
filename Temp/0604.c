@@ -19,4 +19,4 @@ void main()
     s = s + a - b;
     printf("%.5f", s);
     system("pause");
-}
+}n
